@@ -16,15 +16,13 @@ export default function Form({ handleAddActivity }) {
     e.target.reset();
     e.target.newActivity.focus();
     // console.log(formData);
- 
-    return handleAddActivity(formData);
 
+    return handleAddActivity(formData);
   }
   return (
     <form onSubmit={handleSubmit} className="form">
-      
       <label htmlFor="newActivity" className="label-input">
-        Add a New Activity
+        <strong>Add a New Activity</strong>
       </label>
       <input
         type="text"
@@ -34,10 +32,12 @@ export default function Form({ handleAddActivity }) {
         required
       />
       <div className="checkbox">
-        <input type="checkbox" name="typeofWeather"  />
-        <label htmlFor="good">Good Weather Activity</label>
-      </div>  
-    
+        <input type="checkbox" name="typeofWeather" />
+        <label htmlFor="good">
+          <strong>Good Weather Activity</strong>
+        </label>
+      </div>
+
       <button className="button-submit" type="submit">
         Submit
       </button>

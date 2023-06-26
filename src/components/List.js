@@ -1,26 +1,31 @@
-import React from 'react'
+import React from "react";
 
-
-export default function List({ filterActivities,onDeleteActivity}) {
+import "../styles/List.css";
+export default function List({
+  filterActivities,
+  onDeleteActivity,
+  isGoodWeather,
+}) {
   return (
-    <>
-    <ul className="activities-list">
-      {filterActivities.map((activity) => (
-        <ol key={activity.id} className="activity-list__item">
-          <h3>{activity.name}</h3>
-          <button
+    <div className="list">
+      <h2 className="weather-heading">
+        {isGoodWeather
+          ? "The weather is Awesome! Go outside and:"
+          : "Bad Weather Outside! Here's what you can do now:"}
+      </h2>
+      <ul className="activities-list">
+        {filterActivities.map((activity) => (
+          <l key={activity.id} className="activity-list__item">
+            <h3>{activity.name}</h3>
+            <button
               className="button-delete task-button"
               onClick={() => onDeleteActivity(activity.id)}
             >
-              ❌
+              ✘
             </button>
-        </ol>
-      ))}
-    </ul>
-  </>
-  )
+          </l>
+        ))}
+      </ul>
+    </div>
+  );
 }
-
-
-
-
