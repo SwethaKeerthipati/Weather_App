@@ -8,15 +8,17 @@ export default function Form({ handleAddActivity }) {
     const formData = {
       name: e.target.newActivity.value,
       // console.log(name);
-      isGoodWeather: e.target.typeofWeather.checked,
+      isForGoodWeather: e.target.typeofWeather.checked,
       // console.log(isGoodWeather);
     };
 
     //Resetting the form and focusing on the new activity input
     e.target.reset();
     e.target.newActivity.focus();
+    // console.log(formData);
  
     return handleAddActivity(formData);
+
   }
   return (
     <form onSubmit={handleSubmit} className="form">
