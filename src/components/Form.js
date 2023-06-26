@@ -5,7 +5,7 @@ import "../styles/Form.css";
 export default function Form({ handleAddActivity }) {
   function handleSubmit(e) {
     e.preventDefault();
-    const formdata = {
+    const formData = {
       name: e.target.newActivity.value,
       // console.log(name);
       isGoodWeather: e.target.typeofWeather.checked,
@@ -15,13 +15,12 @@ export default function Form({ handleAddActivity }) {
     //Resetting the form and focusing on the new activity input
     e.target.reset();
     e.target.newActivity.focus();
-    console.log(formdata);
-    // return formdata;
-    return handleAddActivity;
+ 
+    return handleAddActivity(formData);
   }
   return (
     <form onSubmit={handleSubmit} className="form">
-      <h1>Weather App</h1>
+      
       <label htmlFor="newActivity" className="label-input">
         Add a New Activity
       </label>
