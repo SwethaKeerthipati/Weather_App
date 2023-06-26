@@ -33,7 +33,7 @@ export default function Form({ handleAddActivity }) {
         name="newActivity"
       />
       <div className="checkbox">
-        <input type="checkbox" name="typeofWeather" />
+        <input type="checkbox" name="typeofWeather"  required/>
         <label htmlFor="good">Good Weather Activity</label>
       </div>
       <button className="button-submit" type="submit">
