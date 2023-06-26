@@ -6,18 +6,31 @@ import List from "./components/List";
 
 function App() {
   
-  const [activities, setActivities] = useState([]);
+  let [activities, setActivities] = useState([]);
+  const isGoodWeather = true
+
 
   function handleAddActivity(newActivity) {
     setActivities([...activities,{id:uuidv4(),...newActivity}]);
     
   }
 
+
+  // function handleFilter(activities) {
+  
+ let goodWeatherActivities = activities.filter((activity) => activity.isForGoodWeather === isGoodWeather )
+ let badWeatherActivities = activities.filter((activity) => activity.isForGoodWeather === !isGoodWeather )
+   
+    // return goodAct
+
+//  ;}
+
+
   return (
     <div>
       <h1>Weather App</h1>
-      <List  activities= {activities}/>
-      <Form handleAddActivity={handleAddActivity}  />
+      <List  filterActivities= {goodWeatherActivities}/>
+      <Form handleAddActivity={handleAddActivity}   />
     </div>
   );
 }
